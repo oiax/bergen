@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :messages, dependent: :destroy
+  
   validates :user_name, :handle_name, presence: true
   validates :user_name, uniqueness: true
 
