@@ -1,24 +1,37 @@
-# README
+# bergen - 新城市IT講習2019のためのサンプルwebアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 稼働条件
 
-Things you may want to cover:
+* Lubuntu 18.04
+* Ruby 2.6.3
+* PostgreSQL 9.6
+* Node.js 6.9
+* yarn 1.0+
 
-* Ruby version
+> 開発は macOS でも構わない。
 
-* System dependencies
+## インストール方法
 
-* Configuration
+```text
+$ cp config/skel/database.yml config/
+$ bundle install
+$ yarn install
+```
 
-* Database creation
+## `master.key` の入手
 
-* Database initialization
+https://github.com/oiax/bergen/wiki/Credentials の節「config/master.key」にある
+32桁の16進数をコピーして、新規ファイル `config/master.key` に貼り付ける。
 
-* How to run the test suite
+## ユーザの新規作成
 
-* Services (job queues, cache servers, search engines, etc.)
+```text
+$ createuser -dP bergen
+```
 
-* Deployment instructions
 
-* ...
+## データベースの作成
+
+```text
+$ bin/rails db:create
+```
