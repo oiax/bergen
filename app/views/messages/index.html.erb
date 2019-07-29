@@ -1,19 +1,10 @@
 <div id="wrapper">
-  <header>
-    <span class="logo-mark"><%= link_to "bergen", root_path %></span>
-    <ul class="header-menus">
-      <li><%= link_to "メッセージ一覧", messages_path %></li>
-    </ul>
-  </header>
-
+  <%= render "shared/header" %>
   <div id="container">
     <div class="posts-index-item">おはようございます！</div>
     <div class="posts-index-item">こんにちは！</div>
     <div class="posts-index-item">こんばんは！</div>
     <div class="posts-index-item">おやすみなさい！</div>
   </div>
-
-  <footer>
-    <p>Powered by BERGEN &copy; 2019 Your Name</p>
-  </footer>
+  <%= render "shared/footer" %>
 </div>
