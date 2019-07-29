@@ -6,4 +6,11 @@ class MessagesController < ApplicationController
   def new
     @message = Message.new
   end
+
+  def create
+    @message = Message.new
+    @message.content = params[:message][:content]
+    @message.save
+    redirect_to messages_path
+  end
 end
