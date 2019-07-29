@@ -1,11 +1,5 @@
 <div id="wrapper">
-  <header>
-    <span class="logo-mark"><%= link_to "bergen", root_path %></span>
-    <ul class="header-menus">
-      <li><%= link_to "メッセージ一覧", messages_path %></li>
-    </ul>
-  </header>
-
+  <%= render "shared/header" %>
   <div id="container">
     <div class="jumbotron">
       <h1 class="jumbotron-title">Hello, Bergen!</h1>
@@ -14,8 +8,5 @@
       </p>
     </div>
   </div>
-
-  <footer>
-    <p>Powered by BERGEN &copy; 2019 Your Name</p>
-  </footer>
+  <%= render "shared/footer" %>
 </div>
