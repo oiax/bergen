@@ -1,0 +1,8 @@
+<h1 class="form-heading">投稿する</h1>
+
+<%= form_for @message do |f| %>
+  <div class="form">
+    <%= f.text_area :content, cols: 60 %>
+    <%= f.submit "投稿" %>
+  </div>
+<% end %>
