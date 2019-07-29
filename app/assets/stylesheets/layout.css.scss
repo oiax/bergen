@@ -1,0 +1,47 @@
+/* 共通レイアウト */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+div#wrapper {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+  background-color: #e0ffe0;
+}
+
+div#container{
+  max-width: 600px;
+  margin: 60px auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  clear: both;
+}
+
+/* ヘッダー */
+header {
+  padding: 5px;
+  background-color: #55dd77;
+  color: #575757;
+  span.logo-mark {
+    font-weight: bold;
+  }
+}
+
+/* フッター */
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: #55dd77;
+  color: #575757;
+  p {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+  }
+}
