@@ -1,3 +1,6 @@
 <% @messages.each do |message| %>
-  <div class="posts-index-item"><%= message.content %></div>
+  <div class="posts-index-item">
+    <%= image_tag("speak.svg", size: 32) %>
+    <%= message.content %>
+  </div>
 <% end %>
