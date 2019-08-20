@@ -13,6 +13,16 @@ div.posts-index-item {
 
 /* 新規投稿フォーム */
 div.form {
+  input {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #d8dadf;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    border-radius: 2px;
+  }
   textarea {
     width: 100%;
     min-height: 110px;
@@ -25,7 +35,7 @@ div.form {
     cursor: pointer;
     font-weight: 300;
     width: 120px;
-    height: 30px;
+    height: 45px;
     border-radius: 2px;
     margin-top: 8px;
     margin-bottom: 0;
