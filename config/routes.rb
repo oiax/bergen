@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/messages/new", to: "messages#new", as: :new_message
 
   get "/login", to: "sessions#new", as: :login
+  post "/session", to: "sessions#create", as: :session
+  delete "/session", to: "sessions#destroy"
 end
