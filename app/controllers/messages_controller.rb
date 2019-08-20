@@ -10,7 +10,10 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new
     @message.content = params[:message][:content]
-    @message.save
-    redirect_to messages_path
+    if @message.save
+      redirect_to messages_path
+    else
+      render action: "new"
+    end
   end
 end
