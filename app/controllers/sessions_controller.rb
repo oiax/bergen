@@ -5,10 +5,10 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(name: params[:name])
     if user
-      puts "ログイン成功！"
+      flash.notice = "ログインしました。"
       redirect_to messages_path
     else
-      puts "ログイン失敗！"
+      flash.now.alert = "ユーザ名またはパスワードが正しくありません。"
       render action: "new"
     end
   end
