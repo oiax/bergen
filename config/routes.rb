@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   get "/messages", to: "messages#index", as: :messages
   post "/messages", to: "messages#create"
   get "/messages/new", to: "messages#new", as: :new_message
+
+  get "/login", to: "sessions#new", as: :login
 end
