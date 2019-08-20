@@ -4,7 +4,8 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(name: params[:name])
-    if user
+    if user && BCrypt::Password.new(user.hashed_password) == params[:password]
+      session[:user_id] = user.id
       flash.notice = "ログインしました。"
       redirect_to messages_path
     else
