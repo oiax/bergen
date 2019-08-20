@@ -1,9 +1,17 @@
 class MessagesController < ApplicationController
   def index
+    if !current_user
+      flash.alert = "ログインしてください。"
+      redirect_to login_path
+    end
     @messages = Message.order(created_at: :desc)
   end
 
   def new
+    if !current_user
+      flash.alert = "ログインしてください。"
+      redirect_to login_path
+    end
     @message = Message.new
   end
 
