@@ -16,3 +16,9 @@ Message.create(user: bob, content: "Railsの勉強頑張るぞー！")
 Message.create(user: carol, content: "#{bob.name}君には負けられない！")
 Message.create(user: alice, content: "このエラーは何で発生してるのかしら…")
 Message.create(user: bob, content: "少しずつ分かってきて楽しくなってきた！")
+
+# フォロー・アンフォローに関するデータを追加
+# aliceはbobとcarolをフォロー、bobはaliceだけをフォローしている状態を再現
+Relationship.create(following_id: alice.id, follower_id: bob.id)
+Relationship.create(following_id: alice.id, follower_id: carol.id)
+Relationship.create(following_id: bob.id, follower_id: alice.id)
