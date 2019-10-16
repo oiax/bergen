@@ -1,6 +1,12 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.order(created_at: :desc)
+    # 自分と自分がフォローしているユーザ達のidをfollowing_iusers_idsに保存
+    following_users_ids = current_user.followings.ids + [current_user.id]
+
+    # following_users_idsを使って必要なメッセージのみを取り出して並び替え
+    @messages = Message
+      .where(user_id: following_users_ids)
+      .order(created_at: :desc)
   end
 
   def new
