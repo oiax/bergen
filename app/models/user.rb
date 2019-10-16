@@ -12,4 +12,8 @@ class User < ApplicationRecord
       self.hashed_password = nil
     end
   end
+
+  def followed_by?(user)
+    passive_relationships.find_by(following_id: user.id).present?
+  end
 end
