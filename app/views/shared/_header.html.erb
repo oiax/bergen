@@ -4,6 +4,7 @@
   <%= tag.span flash.alert, class: "alert" if flash.alert %>
   <ul class="header-menus">
     <% if current_user %>
+      <li><%= link_to "ユーザリスト", users_path %></li>
       <li><%= link_to "メッセージ一覧", messages_path %></li>
       <li><%= link_to "新規投稿", new_message_path %></li>
       <li>

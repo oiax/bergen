@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new", as: :login
   post "/session", to: "sessions#create", as: :session
   delete "/session", to: "sessions#destroy"
+
+  get "/users", to: "users#index", as: :users
 end
