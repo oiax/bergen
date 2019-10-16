@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   delete "/session", to: "sessions#destroy"
 
   get "/users", to: "users#index", as: :users
+
+  post "/users/:id/relationships", to: "relationships#create", as: :user_relationships
+  delete "/users/:id/relationships", to: "relationships#destroy"
 end
