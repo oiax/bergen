@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 
     # following_users_idsを使って必要なメッセージのみを取り出して並び替え
     @messages = Message
+      .includes(:user)
       .where(user_id: following_users_ids)
       .order(created_at: :desc)
   end
