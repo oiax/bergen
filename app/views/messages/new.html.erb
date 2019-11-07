@@ -3,6 +3,10 @@
 <%= form_for @message do |f| %>
   <div class="form">
     <%= f.text_area :content, cols: 60 %>
+    <% f.object.errors[:content].each do |error_message| %>
+      <div class="error-message"><%= error_message %></div>
+    <% end %>
+
     <%= f.submit "投稿" %>
   </div>
 <% end %>

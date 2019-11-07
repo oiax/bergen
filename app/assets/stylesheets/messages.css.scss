@@ -10,26 +10,3 @@ div.posts-index-item {
     margin-right: 15px;
   }
 }
-
-/* 新規投稿フォーム */
-div.form {
-  textarea {
-    width: 100%;
-    min-height: 110px;
-    font-size: 16px;
-    letter-spacing: 2px;
-  }
-  input[type="submit"] {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    font-weight: 300;
-    width: 120px;
-    height: 30px;
-    border-radius: 2px;
-    margin-top: 8px;
-    margin-bottom: 0;
-    margin-right: 0;
-    float: right;
-  }
-}

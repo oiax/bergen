@@ -1,7 +1,17 @@
 <header>
   <span class="logo-mark"><%= link_to "bergen", root_path %></span>
+  <%= tag.span flash.notice, class: "notice" if flash.notice %>
+  <%= tag.span flash.alert, class: "alert" if flash.alert %>
   <ul class="header-menus">
-    <li><%= link_to "メッセージ一覧", messages_path %></li>
-    <li><%= link_to "新規投稿", new_message_path %></li>
+    <% if current_user %>
+      <li><%= link_to "メッセージ一覧", messages_path %></li>
+      <li><%= link_to "新規投稿", new_message_path %></li>
+      <li>
+        <%= link_to "ログアウト", session_path, method: :delete %>
+        <%= tag.small "(#{current_user.name})" %>
+      </li>
+    <% else %>
+      <li><%= link_to "ログイン", login_path %></li>
+    <% end %>
   </ul>
 </header>
