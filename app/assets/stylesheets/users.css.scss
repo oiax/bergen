@@ -1,0 +1,25 @@
+/* ユーザリスト */
+div.users-index-item {
+  padding: 20px;
+  background-color: white;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+  display: flex;
+  align-items: center;
+  div.follow-button {
+    margin: 0 0 0 auto;
+    padding: 5px 10px;
+    background-color: white;
+    border: thin solid #55dd77;
+    border-radius: 20px;
+  }
+  div.unfollow-button {
+    margin: 0 0 0 auto;
+    padding: 5px 10px;
+    background-color: #55dd77;
+    border-radius: 20px;
+    a {
+      color: white;
+    }
+  }
+}
