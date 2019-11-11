@@ -23,4 +23,11 @@ class MessagesController < ApplicationController
       render action: "new"
     end
   end
+
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+    flash.notice = "メッセージを削除しました。"
+    redirect_to messages_path
+  end
 end
