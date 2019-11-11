@@ -4,5 +4,12 @@
     <%= "@#{message.user.name}" %>
     <br />
     <%= message.content %>
+    <% if message.user == current_user %>
+      <%=
+        link_to(content_tag(:i, "", class: "fa fa-trash-o fa-lg"),
+        message_path(id: message.id), method: :delete,
+        data: { confirm: "このメッセージを本当に削除しますか？" })
+      %>
+    <% end %>
   </div>
 <% end %>
