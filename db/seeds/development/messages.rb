@@ -10,3 +10,12 @@ Message.create(user: bob, content: "Railsの勉強頑張るぞー！")
 Message.create(user: carol, content: "#{bob.name}君には負けられない！")
 Message.create(user: alice, content: "このエラーは何で発生してるのかしら…")
 Message.create(user: bob, content: "少しずつ分かってきて楽しくなってきた！")
+
+# メッセージを100個分追加する
+100.times do |n|
+  user = User.all.sample # sampleはランダム抽出するメソッド
+  Message.create(
+    user: user,
+    content: "#{user.name}によるテスト投稿No-#{n}"
+  )
+end
