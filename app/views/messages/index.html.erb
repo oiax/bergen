@@ -4,5 +4,8 @@
     <%= "@#{message.user.name}" %>
     <br />
     <%= message.content %>
+    <% if message.user == current_user %>
+      <a href="#"><i class="fa fa-trash-o fa-lg"></i></a>
+    <% end %>
   </div>
 <% end %>
