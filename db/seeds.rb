@@ -1,24 +1,13 @@
-# ユーザを作成
-user_names = %w(alice bob carol)
-user_names.each do |name|
-  User.create(name: name, password: "password")
+# シードデータとして投入するテーブルの名前を配列に保存する。
+table_names = %w(users messages relationships)
+
+# テーブル名毎に対象ファイルが存在すれば、そのファイルを読み込む。
+table_names.each do |table_name|
+  # Rails.root.joinは引数を複数とって、ファイルパスを生成する。
+  path = Rails.root.join("db", "seeds", Rails.env, "#{table_name}.rb")
+
+  if File.exist?(path)
+    puts "creating #{table_name}..."
+    require path
+  end
 end
-
-# 作成したユーザを変数に保存
-alice = User.find_by(name: "alice")
-bob = User.find_by(name: "bob")
-carol = User.find_by(name: "carol")
-
-# ユーザ毎にメッセージを作成
-# ここは自由にカスタマイズしてください。
-Message.create(user: alice, content: "はじめまして、#{alice.name}です")
-Message.create(user: bob, content: "Railsの勉強頑張るぞー！")
-Message.create(user: carol, content: "#{bob.name}君には負けられない！")
-Message.create(user: alice, content: "このエラーは何で発生してるのかしら…")
-Message.create(user: bob, content: "少しずつ分かってきて楽しくなってきた！")
-
-# フォロー・アンフォローに関するデータを追加
-# aliceはbobとcarolをフォロー、bobはaliceだけをフォローしている状態を再現
-Relationship.create(following_id: alice.id, follower_id: bob.id)
-Relationship.create(following_id: alice.id, follower_id: carol.id)
-Relationship.create(following_id: bob.id, follower_id: alice.id)
