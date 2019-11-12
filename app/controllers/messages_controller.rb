@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
       .includes(:user)
       .where(user_id: following_users_ids)
       .order(created_at: :desc)
+      .page(params[:page]).per(5)
   end
 
   def new
