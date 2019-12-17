@@ -6,6 +6,13 @@ div.users-index-item {
   box-shadow: 0 2px 6px #c1ced7;
   display: flex;
   align-items: center;
+  a.user-name {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  a.user-name:hover {
+    text-decoration: underline;
+  }
   div.follow-button {
     margin: 0 0 0 auto;
     padding: 5px 10px;
