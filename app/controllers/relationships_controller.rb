@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
       following_id: current_user.id,
       follower_id: params[:id]
     )
-    redirect_to users_path
+    redirect_back fallback_location: users_path
   end
 
   def destroy
@@ -12,6 +12,6 @@ class RelationshipsController < ApplicationController
       following_id: current_user.id,
       follower_id: params[:id]
     ).destroy
-    redirect_to users_path
+    redirect_back fallback_location: users_path
   end
 end
