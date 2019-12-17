@@ -1,0 +1,21 @@
+<div class="users-show">
+  <div class="row">
+    <%= image_tag("speak.svg", size: 64) %>
+    <div>
+      <% if @user.id != current_user.id %>
+        <% if @user.followed_by?(current_user) %>
+          <div class="unfollow-button">
+            <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
+          </div>
+        <% else %>
+          <div class="follow-button">
+            <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="row">
+    <span class="user-name">@<%= @user.name %></span>
+  </div>
+</div>
