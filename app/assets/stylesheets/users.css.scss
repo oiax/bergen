@@ -40,9 +40,16 @@ div.users-show {
   div.row {
     display: flex;
     justify-content: space-between;
+    span.user-full-name {
+      font-size: 20px;
+      font-weight: bold;
+    }
     span.user-name {
       font-size: 16px;
-      font-weight: bold;
+      color: gray;
+    }
+    p.user-bio {
+      margin-top: 1rem;
     }
     div.follow-button {
       display: inline-block;
@@ -62,5 +69,8 @@ div.users-show {
         color: white;
       }
     }
+  }
+  div.row.names {
+    justify-content: start;
   }
 }

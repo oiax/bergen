@@ -9,11 +9,15 @@ div.posts-index-item {
   img {
     margin-right: 15px;
   }
-  a.user-name {
+  a.user-full-name {
     font-size: 16px;
     font-weight: bold;
   }
-  a.user-name:hover {
+  a.user-name {
+    font-size: 16px;
+    color: gray;
+  }
+  a.user-full-name:hover, a.user-name:hover {
     text-decoration: underline;
   }
   a[data-method="delete"] {
