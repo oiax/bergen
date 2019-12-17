@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
       .includes(:user)
       .where(user_id: following_users_ids)
       .order(created_at: :desc)
+      .page(params[:page]).per(5)
   end
 
   def new
@@ -22,5 +23,12 @@ class MessagesController < ApplicationController
     else
       render action: "new"
     end
+  end
+
+  def destroy
+    message = Message.find(params[:id])
+    message.destroy
+    flash.notice = "メッセージを削除しました。"
+    redirect_to messages_path
   end
 end
