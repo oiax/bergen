@@ -2,9 +2,11 @@
   <div class="form">
     <%= f.label :name, "名前" %>
     <%= f.text_field :name %>
+    <div class="error-message"><%= @user.errors[:name].first %></div>
 
     <%= f.label :full_name, "フルネーム" %>
     <%= f.text_field :full_name %>
+    <div class="error-message"><%= @user.errors[:full_name].first %></div>
 
     <%= f.label :bio, "自己紹介文" %>
     <%= f.text_area :bio %>

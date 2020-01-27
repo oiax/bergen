@@ -29,12 +29,13 @@ div.form {
     float: right;
   }
   div.field_with_errors {
-    textarea {
+    input, textarea {
       background-color: #fceeeb;
     }
   }
   div.error-message {
     color: red;
     font-size: small;
+    margin: -10px 0 10px 0;
   }
 }
