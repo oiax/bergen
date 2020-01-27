@@ -10,7 +10,7 @@
       <li><%= link_to "アカウント", account_path %></li>
       <li>
         <%= link_to "ログアウト", session_path, method: :delete %>
-        <%= tag.small "(#{current_user.name})" %>
+        <%= tag.small "(#{User.find(session[:user_id]).name})" %>
       </li>
     <% else %>
       <li><%= link_to "ログイン", login_path %></li>
