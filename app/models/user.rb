@@ -5,6 +5,9 @@ class User < ApplicationRecord
   has_many :followings, through: :active_relationships, source: :follower
   has_many :followers, through: :passive_relationships, source: :following
 
+  has_one_attached :profile_picture
+  attribute :new_profile_picture
+
   validates :name, :full_name, presence: { message: "入力必須項目です。" }
   validates :name, uniqueness: { message: "既に使われています。" }
 
