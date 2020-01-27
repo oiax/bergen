@@ -12,6 +12,7 @@ class AccountsController < ApplicationController
     @user.name = params[:user][:name]
     @user.full_name = params[:user][:full_name]
     @user.bio = params[:user][:bio]
+    @user.new_profile_picture = params[:user][:new_profile_picture]
     if @user.save
       flash.notice = "アカウント情報を更新しました。"
       redirect_to account_path

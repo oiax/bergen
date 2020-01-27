@@ -1,5 +1,8 @@
 <%= form_for @user, url: account_path do |f| %>
   <div class="form">
+    <%= f.label :new_profile_picture, "プロフィール画像" %>
+    <%= f.file_field :new_profile_picture %>
+
     <%= f.label :name, "名前" %>
     <%= f.text_field :name %>
     <div class="error-message"><%= @user.errors[:name].first %></div>
