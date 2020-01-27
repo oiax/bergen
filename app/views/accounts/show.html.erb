@@ -1,6 +1,10 @@
 <div class="users-show">
   <div class="row">
-    <%= image_tag("speak.svg", size: 64) %>
+    <% if @user.profile_picture.attached? %>
+      <%= image_tag @user.profile_picture %>
+    <% else %>
+      <%= image_tag("speak.svg") %>
+    <% end %>
     <div>
       <div class="unfollow-button">
         <%= link_to "プロフィールを編集する", edit_account_path %>

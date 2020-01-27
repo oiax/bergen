@@ -11,6 +11,12 @@ class User < ApplicationRecord
   validates :name, :full_name, presence: { message: "入力必須項目です。" }
   validates :name, uniqueness: { message: "既に使われています。" }
 
+  before_save do
+    if new_profile_picture
+      self.profile_picture = new_profile_picture
+    end
+  end
+
   def password=(raw_password)
     if raw_password.kind_of?(String)
       self.hashed_password = BCrypt::Password.create(raw_password)

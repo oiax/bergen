@@ -1,6 +1,10 @@
 <div class="users-show">
   <div class="row">
-    <%= image_tag("speak.svg", size: 64) %>
+    <% if @user.profile_picture.attached? %>
+      <%= image_tag @user.profile_picture %>
+    <% else %>
+      <%= image_tag("speak.svg") %>
+    <% end %>
     <div>
       <% if @user.id != current_user.id %>
         <% if @user.followed_by?(current_user) %>
