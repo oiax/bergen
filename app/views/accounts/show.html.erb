@@ -1,0 +1,14 @@
+<div class="users-show">
+  <div class="row">
+    <%= image_tag("speak.svg", size: 64) %>
+  </div>
+  <div class="row">
+    <span class="user-full-name"><%= @user.full_name %></span>
+  </div>
+  <div class="row">
+    <span class="user-name">@<%= @user.name %></span>
+  </div>
+  <div class="row">
+    <p class="user-bio"><%= @user.bio %></p>
+  </div>
+</div>
