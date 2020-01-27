@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :profile_picture
   attribute :new_profile_picture
+  attribute :remove_profile_picture, :boolean
 
   validates :name, :full_name, presence: { message: "入力必須項目です。" }
   validates :name, uniqueness: { message: "既に使われています。" }
@@ -14,6 +15,8 @@ class User < ApplicationRecord
   before_save do
     if new_profile_picture
       self.profile_picture = new_profile_picture
+    elsif remove_profile_picture
+      self.profile_picture.purge
     end
   end
 
