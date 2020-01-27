@@ -1,6 +1,11 @@
 <div class="users-show">
   <div class="row">
     <%= image_tag("speak.svg", size: 64) %>
+    <div>
+      <div class="unfollow-button">
+        <%= link_to "プロフィールを編集する", edit_account_path %>
+      </div>
+    </div>
   </div>
   <div class="row">
     <span class="user-full-name"><%= @user.full_name %></span>
