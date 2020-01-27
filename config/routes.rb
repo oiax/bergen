@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post "/session", to: "sessions#create", as: :session
   delete "/session", to: "sessions#destroy"
 
+  get "/account", to: "accounts#show", as: :account
+
   get "/users", to: "users#index", as: :users
   get "/users/:id", to: "users#show", as: :user
 
