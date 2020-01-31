@@ -6,17 +6,9 @@
       <%= image_tag("speak.svg") %>
     <% end %>
     <div>
-      <% if @user.id != current_user.id %>
-        <% if @user.followed_by?(current_user) %>
-          <div class="unfollow-button">
-            <%= link_to "フォロー解除", user_relationships_path(@user.id), method: :delete %>
-          </div>
-        <% else %>
-          <div class="follow-button">
-            <%= link_to "フォロー", user_relationships_path(@user.id), method: :post %>
-          </div>
-        <% end %>
-      <% end %>
+      <div class="unfollow-button">
+        <%= link_to "プロフィールを編集する", edit_account_path %>
+      </div>
     </div>
   </div>
   <div class="row">

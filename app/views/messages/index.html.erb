@@ -1,6 +1,10 @@
 <% @messages.each do |message| %>
   <div class="posts-index-item">
-    <%= link_to image_tag("speak.svg", size: 32), user_path(message.user) %>
+    <% if message.user.profile_picture.attached? %>
+      <%= link_to image_tag(message.user.profile_picture), user_path(message.user) %>
+    <% else %>
+      <%= link_to image_tag("speak.svg"), user_path(message.user) %>
+    <% end %>
     <div>
       <%= link_to message.user.full_name, user_path(message.user), class: "user-full-name" %>
       <%= link_to "@#{message.user.name}", user_path(message.user), class: "user-name" %>

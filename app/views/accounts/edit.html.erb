@@ -1,0 +1,26 @@
+<%= form_for @user, url: account_path do |f| %>
+  <div class="form">
+    <%= f.label :new_profile_picture, "プロフィール画像" %>
+    <%= f.file_field :new_profile_picture %>
+    <% if @user.profile_picture.attached? %>
+      <div>
+        <%= image_tag @user.profile_picture %></br>
+        <%= f.check_box :remove_profile_picture %>
+        <%= f.label :remove_profile_picture, "プロフィール画像を削除する" %>
+      </div>
+    <% end %>
+
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+    <div class="error-message"><%= @user.errors[:name].first %></div>
+
+    <%= f.label :full_name, "フルネーム" %>
+    <%= f.text_field :full_name %>
+    <div class="error-message"><%= @user.errors[:full_name].first %></div>
+
+    <%= f.label :bio, "自己紹介文" %>
+    <%= f.text_area :bio %>
+
+    <%= f.submit "プロフィールを更新する" %>
+  </div>
+<% end %>
