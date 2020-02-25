@@ -21,4 +21,6 @@ Rails.application.routes.draw do
 
   post "/users/:id/relationships", to: "relationships#create", as: :user_relationships
   delete "/users/:id/relationships", to: "relationships#destroy"
+
+  get "/api/favors/count", to: "api/favors#count", as: :api_favors_count
 end
