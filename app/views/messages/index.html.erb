@@ -10,6 +10,27 @@
       <%= link_to "@#{message.user.name}", user_path(message.user), class: "user-name" %>
       <br />
       <%= message.content %>
+      <br />
+      <!-- もし対象のメッセージに良いね済みの場合は取り消しボタン -->
+      <%=
+        link_to(
+          content_tag(:i, "", class:"fas fa-heart fa-lg"),
+          favors_path(message_id: message.id), method: :delete
+        )
+      %>
+      <!-- もし対象のメッセージに良いねをしていなければ良いねボタン -->
+      <%=
+        link_to(
+          content_tag(:i, "", class:"far fa-heart fa-lg"),
+          favors_path(message_id: message.id), method: :post
+        )
+      %>
+      <!-- 良いねの総件数 -->
+      <%=
+        tag.span(
+          message.favors.count, class: "favor-count"
+        )
+      %>
     </div>
     <% if message.user == current_user %>
       <%=
