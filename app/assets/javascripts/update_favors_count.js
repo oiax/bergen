@@ -1,6 +1,8 @@
 function update_favors_count() {
   $('.favor-count').each(function(index, _) {
-    console.log(index);
+    const elem = $(".favor-count").eq(index);
+    console.log(elem);
+    console.log(elem.data("path"));
   });
 }
 
