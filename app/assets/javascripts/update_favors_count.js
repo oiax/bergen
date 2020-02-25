@@ -3,5 +3,5 @@ function update_favors_count() {
 }
 
 $(document).ready(() => {
-  update_favors_count();
+  setInterval(update_favors_count, 1000 * 5)
 })
