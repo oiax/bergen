@@ -1,5 +1,7 @@
 function update_favors_count() {
-  console.log("hello!");
+  $('.favor-count').each(function(index, _) {
+    console.log(index);
+  });
 }
 
 $(document).ready(() => {
