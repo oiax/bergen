@@ -26,10 +26,13 @@
           )
         %>
       <% end %>
-      <!-- 良いねの総件数 -->
       <%=
         tag.span(
-          message.favors.count, class: "favor-count"
+          message.favors.count, class: "favor-count",
+          data: {
+            message_id: message.id,
+            path: api_favors_count_path(message_id: message.id)
+          }
         )
       %>
     </div>
