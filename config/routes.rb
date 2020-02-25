@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "/messages/new", to: "messages#new", as: :new_message
   delete "/messages/:id", to: "messages#destroy", as: :message
 
+  post "/messages/:message_id/favors", to: "favors#create", as: :favors
+  delete "/messages/:message_id/favors", to: "favors#destroy"
+
   get "/login", to: "sessions#new", as: :login
   post "/session", to: "sessions#create", as: :session
   delete "/session", to: "sessions#destroy"
@@ -18,4 +21,6 @@ Rails.application.routes.draw do
 
   post "/users/:id/relationships", to: "relationships#create", as: :user_relationships
   delete "/users/:id/relationships", to: "relationships#destroy"
+
+  get "/api/favors/count", to: "api/favors#count", as: :api_favors_count
 end

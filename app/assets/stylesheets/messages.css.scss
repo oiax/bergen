@@ -27,4 +27,17 @@ div.posts-index-item {
   a[data-method="delete"] {
     margin: 0 0 0 auto;
   }
+  div {
+    a {
+      i.fas.fa-heart.fa-lg {
+        color: salmon;
+      }
+      i.far.fa-heart.fa-lg {
+        color: pink;
+      }
+    }
+    span.favor-count {
+      color: salmon;
+    }
+  }
 }

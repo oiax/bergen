@@ -10,6 +10,33 @@
       <%= link_to "@#{message.user.name}", user_path(message.user), class: "user-name" %>
       <br />
       <%= message.content %>
+      <br />
+      <div class="buttons">
+        <% if message.favored_by?(current_user) %>
+          <%=
+            link_to(
+              content_tag(:i, "", class:"fas fa-heart fa-lg"),
+              favors_path(message_id: message.id), method: :delete
+            )
+          %>
+        <% else %>
+          <%=
+            link_to(
+              content_tag(:i, "", class:"far fa-heart fa-lg"),
+              favors_path(message_id: message.id), method: :post
+            )
+          %>
+        <% end %>
+        <%=
+          tag.span(
+            message.favors.count, class: "favor-count",
+            data: {
+              message_id: message.id,
+              path: api_favors_count_path(message_id: message.id)
+            }
+          )
+        %>
+      </div>
     </div>
     <% if message.user == current_user %>
       <%=
