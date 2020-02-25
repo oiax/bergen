@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "follower_id"
   has_many :followings, through: :active_relationships, source: :follower
   has_many :followers, through: :passive_relationships, source: :following
+  has_many :favors
 
   has_one_attached :profile_picture
   attribute :new_profile_picture
