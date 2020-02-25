@@ -1,5 +1,5 @@
 class Api::FavorsController < ApplicationController
   def count
-    puts "hello, from ajax!"
+    render json: { message: "hello, from ajax!" }
   end
 end
